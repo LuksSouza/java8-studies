@@ -1,6 +1,7 @@
 package br.com.studies.java8.defaultmethods;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class StringOrder {
@@ -9,11 +10,9 @@ public class StringOrder {
 
         List<String> words = Arrays.asList("alura", "caelum", "casa do codigo");
 
-        words.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+        words.sort(Comparator.comparing(String::length));
 
-        words.forEach((String s) -> {
-            System.out.println(s);
-        });
+        words.forEach(System.out::println);
     }
 
 }
