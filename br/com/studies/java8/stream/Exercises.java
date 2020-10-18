@@ -24,7 +24,18 @@ public class Exercises {
 
         //Print courses whose name has at least 4 letters
         courses.stream()
-            .filter(c -> c.length() <= 4)
+            .filter(c -> c.length() >= 4)
+            .forEach(System.out::println);
+
+        //Print the cube of odd numbers
+        number.stream()
+            .filter(n -> n % 2 != 0)
+            .map(n1 -> n1*n1*n1)
+            .forEach(System.out::println);
+
+        //Print the number of caracters in each course name
+        courses.stream()
+            .map(c -> c.length())
             .forEach(System.out::println);
     }
 
